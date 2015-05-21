@@ -1,6 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
-
+  window.backgrounds = ['<img src="images/alcoholicCowboysBG.jpg">'];
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
