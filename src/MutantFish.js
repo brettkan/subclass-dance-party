@@ -45,6 +45,7 @@ Scream.prototype.constructor = Scream;
 
 var Kang = function(top, left, timeBetweenSteps){
   makeDancer.apply(this, arguments);
+  this.location = undefined;
   this.$node.addClass('kang');
   this.$node.append('<img src="images/kang.png">');
 };
@@ -54,13 +55,28 @@ Kang.prototype.randomPosition = function(){
   var randomTop = ($('body').height()-300) * Math.random();
   var randomLeft = ($('body').width()-200) * Math.random();
   this.setPosition(randomTop, randomLeft);
+  this.location = {top: randomTop, left: randomLeft, width: 181.5, height: 300};
+  for(var i = 0; i < window.dancers.length; i++){
+    if(this.location.left < window.dancers[i].rect.left + window.dancers[i].rect.width &&
+       this.location.left + this.location.width > window.dancers[i].rect.left &&
+       this.location.top < window.dancers[i].rect.top + window.dancers[i].rect.height &&
+       this.location.height + this.location.top > window.dancers[i].rect.top){
+      window.dancers[i].$node.addClass('hidden');
+    }
+  }
 };
+
+
+
 
 Kang.prototype.step = function(){
   // call the old version of step at the beginning of any call to this new version of step
   makeDancer.prototype.step.call(this);//references dance prototype step
 
   this.randomPosition();
+  // for(var i = 0; i < window.dancers.length; i++){
+  //   if()
+  // }
 };
 
 

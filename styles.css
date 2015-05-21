@@ -66,3 +66,10 @@ body, a:link, a:visited, a:active{
 .dancer.mutantFish img{
   width: 150px;
 }
+.dancer.kang img{
+  height: 300px;
+  width: 181.5px;
+}
+.hidden {
+  visibility: collapse;
+}

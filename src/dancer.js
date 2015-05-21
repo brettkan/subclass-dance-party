@@ -6,9 +6,13 @@ var makeDancer = function(top, left, timeBetweenSteps){
 
   this.step();
   this.timeBetween = timeBetweenSteps;
-
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
+  this.rect = {};
+  this.rect.top = top;
+  this.rect.left = left;
+  this.rect.width = this.$node.find('img').width();
+  this.rect.height = this.$node.find('img').height();
 };
 
 makeDancer.prototype.step = function(){
@@ -17,16 +21,9 @@ makeDancer.prototype.step = function(){
   setTimeout(this.step.bind(this), this.timeBetween);
 };
 
-makeDancer.prototype.mouseOver = function(){
-
-
-
-};
-
 makeDancer.prototype.setPosition = function(top, left){
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
-
   var styleSettings = {
     top: top,
     left: left
