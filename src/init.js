@@ -1,6 +1,10 @@
 $(document).ready(function(){
   window.dancers = [];
-  window.backgrounds = ['<img src="images/alcoholicCowboysBG.jpg">'];
+  window.backgrounds = ['url(images/alcoholicCowboysBG.jpg)',
+                        'url(images/house.jpg)',
+                        'url(images/livingroom.png)',
+                        'url(images/school.png)',
+                        'url(images/townhall.jpg)'];
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
@@ -32,6 +36,12 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+  });
+
+  $(".changeBackgroundButton").on("click", function(event) {
+    debugger;
+    var rand = window.backgrounds[Math.floor(Math.random() * window.backgrounds.length)];
+    $('html').css('background', rand + " no-repeat center center fixed");
   });
 });
 
