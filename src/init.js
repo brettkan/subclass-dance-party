@@ -1,5 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.kangs = [];
   window.backgrounds = ['url(images/alcoholicCowboysBG.jpg)',
                         'url(images/house.jpg)',
                         'url(images/livingroom.png)',
@@ -36,9 +37,13 @@ $(document).ready(function(){
       ($("body").width() - 200) * Math.random(),
       Math.random() * 5000
     );
-
-    window.dancers.push(dancer);
-    $('body').append(window.dancers[window.dancers.length-1].$node);
+    if(dancerMakerFunction === Kang){
+      window.kangs.push(dancer);
+      $('body').append(window.kangs[window.kangs.length-1].$node);
+    } else {
+      window.dancers.push(dancer);
+      $('body').append(window.dancers[window.dancers.length-1].$node);
+    }
 
   });
 
@@ -67,6 +72,9 @@ $(document).ready(function(){
   });
 
   $(".lineupBackgroundButton").on("click", function(event) {
+    var dancersNoKang = dancers.slice();
+
+
     for(var i = 0; i < window.dancers.length; i++){
       var leftPosition = (($('body').width()-200)/window.dancers.length)*i;
       window.dancers[i].setPosition(700, leftPosition);
