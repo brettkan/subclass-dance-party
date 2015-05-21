@@ -16,12 +16,22 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  /*display: inline-block;*/
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
+}
+.blinkyDancer{
+  border-radius:10px;
+  border:10px solid red;
+}
+.otherDancer{
+  border-radius:10px;
+  border:10px solid blue;
+}
+.mutantFish{
+  border: 10px;
 }
