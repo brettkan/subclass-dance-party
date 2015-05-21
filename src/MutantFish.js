@@ -42,3 +42,40 @@ var Scream = function(top, left, timeBetweenSteps){
 };
 Scream.prototype = Object.create(makeDancer.prototype);
 Scream.prototype.constructor = Scream;
+
+var Kang = function(top, left, timeBetweenSteps){
+  makeDancer.apply(this, arguments);
+  this.$node.addClass('kang');
+  this.$node.append('<img src="images/kang.png">');
+};
+Kang.prototype = Object.create(makeDancer.prototype);
+Kang.prototype.constructor = Kang;
+Kang.prototype.randomPosition = function(){
+  var randomTop = ($('body').height()-300) * Math.random();
+  var randomLeft = ($('body').width()-200) * Math.random();
+  this.setPosition(randomTop, randomLeft);
+};
+
+Kang.prototype.step = function(){
+  // call the old version of step at the beginning of any call to this new version of step
+  makeDancer.prototype.step.call(this);//references dance prototype step
+
+  this.randomPosition();
+};
+
+
+var Bart = function(top, left, timeBetweenSteps){
+  makeDancer.apply(this, arguments);
+  this.$node.addClass('bart');
+  this.$node.append('<img src="images/bart.gif">');
+};
+Bart.prototype = Object.create(makeDancer.prototype);
+Bart.prototype.constructor = Bart;
+
+var Marge = function(top, left, timeBetweenSteps){
+  makeDancer.apply(this, arguments);
+  this.$node.addClass('marge');
+  this.$node.append('<img src="images/marge.gif">');
+};
+Marge.prototype = Object.create(makeDancer.prototype);
+Marge.prototype.constructor = Marge;

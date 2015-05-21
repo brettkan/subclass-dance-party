@@ -53,3 +53,16 @@ body, a:link, a:visited, a:active{
   width: 200px;
   height: auto;
 }
+.dancer.marge img{
+  width: 140px;
+}
+.dancer.homerHedge img{
+  width: 250px;
+}
+.dancer.homerTwirl img{
+  width: auto;
+  height: 200px;
+}
+.dancer.mutantFish img{
+  width: 150px;
+}

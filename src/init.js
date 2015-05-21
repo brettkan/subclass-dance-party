@@ -34,7 +34,7 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       ($("body").height() - 300) * Math.random(),
       ($("body").width() - 200) * Math.random(),
-      Math.random() * 1000
+      Math.random() * 5000
     );
 
     window.dancers.push(dancer);
