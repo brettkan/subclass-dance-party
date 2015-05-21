@@ -25,6 +25,7 @@ LisaDance.prototype = Object.create(makeDancer.prototype);
 LisaDance.prototype.constructor = LisaDance;
 
 
+
 var HomerHedge = function(top, left, timeBetweenSteps){
   makeDancer.apply(this, arguments);
   this.$node.addClass('homerHedge');

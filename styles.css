@@ -22,7 +22,7 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
-.title, .changeBackgroundButton{
+.title, .changeBackgroundButton, .lineupBackgroundButton{
   padding: 5px 12px;
   float:left;
 }
@@ -36,6 +36,7 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   position:absolute;
+  transition-duration: 2000ms;
 }
 .blinkyDancer{
   border-radius:10px;

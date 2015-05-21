@@ -39,7 +39,9 @@ $(document).ready(function(){
 
     window.dancers.push(dancer);
     $('body').append(window.dancers[window.dancers.length-1].$node);
+
   });
+
 
   $(".changeBackgroundButton").on("click", function(event) {
     var rand = window.backgrounds[Math.floor(Math.random() * window.backgrounds.length)];
@@ -49,7 +51,32 @@ $(document).ready(function(){
     $('html').css('-o-background-size', "cover");
     $('html').css('background-size', "cover");
   });
+
+  $("body").on("mouseenter", '.dancer', function() {
+    var rotation = '360deg';
+    $(this).css('-webkit-transform','rotate('+rotation+')');
+    $(this).css('-moz-transform','rotate('+rotation+')');
+    $(this).css('transform','rotate('+rotation+')');
+  });
+
+  $("body").on("mouseleave", '.dancer', function() {
+    var rotation = '0deg';
+    $(this).css('-webkit-transform','rotate('+rotation+')');
+    $(this).css('-moz-transform','rotate('+rotation+')');
+    $(this).css('transform','rotate('+rotation+')');
+  });
+
+  $(".lineupBackgroundButton").on("click", function(event) {
+    for(var i = 0; i < window.dancers.length; i++){
+      var leftPosition = (($('body').width()-200)/window.dancers.length)*i;
+      window.dancers[i].setPosition(700, leftPosition);
+    }
+  });
+
+
 });
+
+
 
 //each time we create a dancer, push it to window.dancers
 //make different dance maker functions
