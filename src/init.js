@@ -5,6 +5,7 @@ $(document).ready(function(){
                         'url(images/livingroom.png)',
                         'url(images/school.png)',
                         'url(images/townhall.jpg)'];
+
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
@@ -35,6 +36,9 @@ $(document).ready(function(){
       ($("body").width() - 200) * Math.random(),
       Math.random() * 1000
     );
+
+    debugger;
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
 
