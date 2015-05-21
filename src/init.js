@@ -37,15 +37,17 @@ $(document).ready(function(){
       Math.random() * 1000
     );
 
-    debugger;
     window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+    $('body').append(window.dancers[window.dancers.length-1].$node);
   });
 
   $(".changeBackgroundButton").on("click", function(event) {
-    debugger;
     var rand = window.backgrounds[Math.floor(Math.random() * window.backgrounds.length)];
     $('html').css('background', rand + " no-repeat center center fixed");
+    $('html').css('-webkit-background-size', "cover");
+    $('html').css('-moz-background-size', "cover");
+    $('html').css('-o-background-size', "cover");
+    $('html').css('background-size', "cover");
   });
 });
 
