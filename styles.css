@@ -44,3 +44,7 @@ body, a:link, a:visited, a:active{
 .mutantFish{
   border: 10px;
 }
+img{
+  width: 250px;
+  height: auto;
+}
