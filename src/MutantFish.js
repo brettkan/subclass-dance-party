@@ -82,6 +82,8 @@ Kang.prototype.randomPosition = function(){
        this.location.left + this.location.width > window.dancers[i].rect.left &&
        this.location.top < window.dancers[i].rect.top + window.dancers[i].rect.height &&
        this.location.height + this.location.top > window.dancers[i].rect.top){
+       // $('body').app('<img src="images/explosion.gif').setPosition(randomTop, randomLeft);
+      //setTimeout( window.dancers[i].$node.append('<img class=explosion src="images/explosion.gif">').bind(null) , 5000);
       window.dancers[i].$node.addClass('hidden');
     }
   }
