@@ -8,11 +8,11 @@ var makeDancer = function(top, left, timeBetweenSteps){
   this.timeBetween = timeBetweenSteps;
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
-  this.rect = {};
-  this.rect.top = top;
-  this.rect.left = left;
-  this.rect.width = this.$node.find('img').width();
-  this.rect.height = this.$node.find('img').height();
+  // this.rect = {};
+  // this.rect.top = top;
+  // this.rect.left = left;
+  // this.rect.width = this.$node.find('img').width();
+  // this.rect.height = this.$node.find('img').height();
 };
 
 makeDancer.prototype.step = function(){
